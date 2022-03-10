@@ -4,7 +4,8 @@
 
 (require 'color)
 
-(defmacro define-theme (name &key background
+(defmacro define-theme (name 
+						&key background
 			     &key foreground
 			     &key error
 			     &key warning
@@ -12,15 +13,32 @@
 			     &key info
 			     &key keyword
 			     &key type
-			     &key constant)
+						&key constant
+						
+						&key ansi-color-black
+						&key ansi-color-red
+						&key ansi-color-green
+						&key ansi-color-yellow
+						&key ansi-color-blue
+						&key ansi-color-magenta
+						&key ansi-color-cyan
+						&key ansi-color-white)
   (let ((background60 (color-lighten-name background 60))
 	(background50 (color-lighten-name background 50))
 	(background40 (color-lighten-name background 40))
 	(background30 (color-lighten-name background 30))
 	(background20 (color-lighten-name background 20))
 	(background10 (color-lighten-name background 10))
-	(background5 (color-lighten-name background 5))
-	(background-2 (color-darken-name background 2)))
+		(background5  (color-lighten-name background 5))
+		(background-2 (color-darken-name background 2))
+		(ansi-color-bright-black (color-lighten-name background 50))
+		(ansi-color-bright-red (color-lighten-name background 50))
+		(ansi-color-bright-green (color-lighten-name background 50))
+		(ansi-color-bright-yellow (color-lighten-name background 50))
+		(ansi-color-bright-blue (color-lighten-name background 50))
+		(ansi-color-bright-magenta (color-lighten-name background 50))
+		(ansi-color-bright-cyan (color-lighten-name background 50))
+		(ansi-color-bright-white (color-lighten-name background 50)))
     `(progn
        (deftheme ,name)
        (let ((class '((class color) (min-colors 89))))
@@ -76,7 +94,50 @@
 	  `(link ((,class (:bold t :underline t))))
 	  `(link-visited ((,class (:bold nil :underline t))))
 	  `(button ((,class (:background ,,background20 :foreground ,,foreground))))
-	  `(header-line ((,class (:background ,,background5 :foreground ,,foreground)))))))))
+		  ;; ANSI colors
+		  `(ansi-color-black ((,class (:foreground ,,ansi-color-black))))
+		  `(ansi-color-red ((,class (:foreground ,,ansi-color-red))))
+		  `(ansi-color-green ((,class (:foreground ,,ansi-color-green))))
+		  `(ansi-color-yellow ((,class (:foreground ,,ansi-color-yellow))))
+		  `(ansi-color-blue ((,class (:foreground ,,ansi-color-blue))))
+		  `(ansi-color-magenta ((,class (:foreground ,,ansi-color-magenta))))
+		  `(ansi-color-cyan ((,class (:foreground ,,ansi-color-cyan))))
+		  `(ansi-color-white ((,class (:foreground ,,ansi-color-white))))
+		  `(ansi-color-bright-black ((,class (:foreground ,,ansi-color-bright-black))))
+		  `(ansi-color-bright-red ((,class (:foreground ,,ansi-color-bright-red))))
+		  `(ansi-color-bright-green ((,class (:foreground ,,ansi-color-bright-green))))
+		  `(ansi-color-bright-yellow ((,class (:foreground ,,ansi-color-bright-yellow))))
+		  `(ansi-color-bright-blue ((,class (:foreground ,,ansi-color-bright-blue))))
+		  `(ansi-color-bright-magenta ((,class (:foreground ,,ansi-color-bright-magenta))))
+		  `(ansi-color-bright-cyan ((,class (:foreground ,,ansi-color-bright-cyan))))
+		  `(ansi-color-bright-white ((,class (:foreground ,,ansi-color-bright-white))))
+		  ;; EShell
+		  `(eshell-prompt ((,class (:foreground ,,foreground :bold t))))
+		  `(eshell-ls-archive ((,class (:foreground ,,ansi-color-magenta))))
+		  `(eshell-ls-backup ((,class (:foreground ,,ansi-color-yellow))))
+		  `(eshell-ls-clutter ((,class (:foreground ,,ansi-color-red))))
+		  `(eshell-ls-directory ((,class (:foreground ,,ansi-color-blue))))
+		  `(eshell-ls-executable ((,class (:foreground ,,ansi-color-green))))
+		  `(eshell-ls-missing ((,class (:foreground ,,ansi-color-red))))
+		  `(eshell-ls-product ((,class (:foreground ,,ansi-color-yellow))))
+		  `(eshell-ls-readonly ((,class (:foreground ,,ansi-color-yellow))))
+		  `(eshell-ls-special ((,class (:foreground ,,ansi-color-magenta))))
+		  `(eshell-ls-symlink ((,class (:foreground ,,ansi-color-cyan))))
+		  `(eshell-ls-unreadable ((,class (:foreground ,,ansi-color-red))))
+	      ;; --- 3rd Party
+		  ;; Git Gutter
+		  `(git-gutter:added ((,class (:foreground ,,success :bold t))))
+		  `(git-gutter:deleted ((,class (:foreground ,,error :bold t))))
+		  `(git-gutter:modified ((,class (:foreground ,,info :bold t))))
+		  ;; VTerm
+		  `(vterm-color-black ((,class (:foreground ,,ansi-color-black))))
+		  `(vterm-color-red ((,class (:foreground ,,ansi-color-red))))
+		  `(vterm-color-green ((,class (:foreground ,,ansi-color-green))))
+		  `(vterm-color-yellow ((,class (:foreground ,,ansi-color-yellow))))
+		  `(vterm-color-blue ((,class (:foreground ,,ansi-color-blue))))
+		  `(vterm-color-magenta ((,class (:foreground ,,ansi-color-magenta))))
+		  `(vterm-color-cyan ((,class (:foreground ,,ansi-color-cyan))))
+		  `(vterm-color-white ((,class (:foreground ,,ansi-color-white)))))))))
 
 (provide 'define-theme)
 
