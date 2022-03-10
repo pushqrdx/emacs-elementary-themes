@@ -9,7 +9,7 @@
   :foreground "#f6f3e8"
   :error "#ff6666"
   :warning "#ccaa8f"
-  :success "#36cf17"
+  :success "#69e052"
   :info "#5bbbca"
   :keyword "#f28cc8"
   :type "#92a65e"
