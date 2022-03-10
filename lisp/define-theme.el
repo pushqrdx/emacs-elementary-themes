@@ -53,11 +53,8 @@
 	  `(isearch ((,class (:background ,,background20 :foreground ,,success))))
 	  `(lazy-highlight ((,class (:background ,,background10 :foreground ,,info))))
 	  ;; Modeline
-	  ;; `(mode-line ((,class (:background ,,background5 :height 0.9 :foreground ,,foreground))))
-	  ;; `(mode-line-inactive ((,class (:background ,,background :foreground ,,background20))))
-
-	  `(mode-line ((,class (:background ,,background5 :height 0.9 :foreground ,,foreground :box (:line-width 6 :color ,,background5) :underline ,,background-2 :overline ,,background-2))))
-	  `(mode-line-inactive ((,class (:background ,,background :foreground ,,background20 :box (:line-width 6 :color ,,background)))))
+		  `(mode-line ((,class (:background ,,background5 :foreground ,,foreground))))
+		  `(mode-line-inactive ((,class (:background ,,background :foreground ,,background20))))
 	  ;; Minibuffer
 	  `(minibuffer-prompt ((,class (:foreground ,,keyword))))
 	  ;; Whitespace
