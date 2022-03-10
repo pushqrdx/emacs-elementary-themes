@@ -9,7 +9,7 @@
   :foreground "#f6f3e8"
   :error "#ff6666"
   :warning "#ccaa8f"
-  :success "#69e052"
+  :success "#85d775"
   :info "#5bbbca"
   :keyword "#f28cc8"
   :type "#92a65e"
@@ -17,7 +17,7 @@
   ;; ansi colors
   :ansi-color-black "#0d0d0d"
   :ansi-color-red "#eb5555"
-  :ansi-color-green "#63e649"
+  :ansi-color-green "#69da52"
   :ansi-color-yellow "#ccaa8f"
   :ansi-color-blue "#5bbbca"
   :ansi-color-magenta "#f28cc8"
