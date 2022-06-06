@@ -139,6 +139,9 @@
 		  `(eshell-ls-symlink ((,class (:foreground ,,ansi-color-cyan))))
 		  `(eshell-ls-unreadable ((,class (:foreground ,,ansi-color-red))))
 	      ;; --- 3rd Party
+		  ;; Company
+		  `(company-tooltip ((,class (:background ,,background20))))
+		  `(company-tooltip-selection ((,class (:background ,,background30))))
 		  ;; Git Gutter
 		  `(git-gutter:added ((,class (:foreground ,,success :bold t))))
 		  `(git-gutter:deleted ((,class (:foreground ,,error :bold t))))
