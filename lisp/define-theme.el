@@ -4,6 +4,9 @@
 
 (require 'color)
 
+(defun color-lighten-hsl (H S L percent)
+  (list H S (color-clamp (+ L (/ percent 100.0)))))
+
 (defmacro define-theme (name 
 						&key background
 						&key foreground
